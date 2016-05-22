@@ -23,6 +23,9 @@ public class ParkingAdapter extends RecyclerView.Adapter<ParkingAdapter.MyViewHo
             name = (TextView) view.findViewById(R.id.name);
             address = (TextView) view.findViewById(R.id.address);
             openSpots = (TextView) view.findViewById(R.id.openSpots);
+//            name.setOnClickListener(this);
+//            address.setOnClickListener(this);
+//            openSpots.setOnClickListener(this);
         }
     }
 
@@ -44,7 +47,15 @@ public class ParkingAdapter extends RecyclerView.Adapter<ParkingAdapter.MyViewHo
         holder.name.setText(parking.getName());
         holder.address.setText(parking.getAddress());
         holder.openSpots.setText(parking.getOpenSpots());
+        if(Integer.parseInt(parking.getOpenSpots()) <= 0) {
+            holder.openSpots.setBackgroundResource(R.drawable.shape_notification_red);
+        }
     }
+
+//    @Override
+//    public void onClick(View v) {
+//
+//    }
 
     @Override
     public int getItemCount() {

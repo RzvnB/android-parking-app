@@ -1,5 +1,6 @@
 package com.example.oc.parkingapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -11,8 +12,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-
-
+import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 import java.util.ArrayList;
@@ -62,10 +63,20 @@ public class Dashboard extends AppCompatActivity {
         p = new Parking("Parking 6", "Address 6", "15");
         parkingList.add(p);
 
-        p = new Parking("Parking 7", "Address 7", "33");
+        p = new Parking("Parking 7", "Address 7", "0");
         parkingList.add(p);
 
         mAdapter.notifyDataSetChanged();
+    }
+
+
+    public void showMap(View view) {
+        TextView v = (TextView) ((ViewGroup)view).getChildAt(0);
+        Intent intent = new Intent(this, Map.class);
+        String viewName = v.getText().toString();
+        intent.putExtra("viewName", viewName);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 
     @Override
