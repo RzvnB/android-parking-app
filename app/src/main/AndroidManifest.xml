@@ -29,6 +29,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.oc.parkingapp.Dashboard" />
         </activity>
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyC5llixUXOtzabIy2Id8adzX6rpHUKjCn0"/>
     </application>
 
 </manifest>

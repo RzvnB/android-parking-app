@@ -49,6 +49,8 @@ public class ParkingAdapter extends RecyclerView.Adapter<ParkingAdapter.MyViewHo
         holder.openSpots.setText(parking.getOpenSpots());
         if(Integer.parseInt(parking.getOpenSpots()) <= 0) {
             holder.openSpots.setBackgroundResource(R.drawable.shape_notification_red);
+        } else {
+            holder.openSpots.setBackgroundResource(R.drawable.shape_notification);
         }
     }
 

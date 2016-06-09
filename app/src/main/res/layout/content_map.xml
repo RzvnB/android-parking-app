@@ -12,4 +12,16 @@
     tools:context="com.example.oc.parkingapp.Map"
     tools:showIn="@layout/activity_map">
 
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        map:cameraTargetLat="45.7490755"
+        map:cameraTargetLng="21.2413750"
+        map:cameraZoom="19.4613"
+        map:mapType="normal"
+        map:liteMode="true"/>
+
 </RelativeLayout>
